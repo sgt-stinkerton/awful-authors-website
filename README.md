@@ -1,6 +1,5 @@
 # Multiplayer Browser-Based Game
-This repo is just to show off the code for awful authors, in case anyone wanted to see it, and is not intended to be cloned or run. to access the site, please follow this link below: 
-[Awful Authors Page Link](https://awful-authors.mce123.co.uk:80/)
+This repo is just to show off the code for awful authors, in case anyone wanted to see it, and is not intended to be cloned or run. to access the site, please follow this link: [Awful Authors Page Link](https://awful-authors.mce123.co.uk:80/)
 
 The 3 files:
 - **Server.js** - the server-side logic
