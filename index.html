@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" type="image/x-icon" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/stylesheet.css">
+    <script type="text/javascript" src="https://livejs.com/live.js"></script>
+    <title>Awful Authors</title>
+  </head>
+
+  <body>
+    <div id="view-home" class="hidden background">
+      <p content="notranslate" class="lorem">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi fugiat incidunt velit dolorum recusandae quas ducimus possimus quae voluptatibus accusamus ullam soluta voluptatum, iste corporis repellendus quis perspiciatis, sunt rerum? Voluptate aperiam harum dolorum earum quo dignissimos tempora quaerat? Sit eveniet et nemo harum reprehenderit dicta recusandae nobis asperiores vero veritatis provident aliquid quam tempore distinctio nihil, laborum quis expedita odit voluptates quod a voluptas perspiciatis explicabo voluptate? Voluptates, vitae et! Repudiandae temporibus illum, natus voluptatem velit est dignissimos atque. Qui consequuntur molestiae, officiis dicta inventore perspiciatis illum veniam voluptas magnam tempora iusto adipisci provident ea iste dolores reprehenderit a reiciendis aliquam harum porro quod vel ipsa! Quo ullam dolores commodi quasi dolor ut nihil ducimus similique eligendi, ipsum iusto quas labore minus ex expedita error nobis eius provident. Quae voluptatem neque voluptas alias non atque corporis hic, autem eius aut nulla dicta totam, inventore exercitationem beatae distinctio necessitatibus impedit? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi obcaecati, voluptas sit, earum deleniti a mollitia, amet ut porro sunt eius iste deserunt quo voluptatibus ratione nostrum molestiae. Earum reiciendis totam inventore ex quas deleniti quo quidem cupiditate quisquam, asperiores corporis ab quasi quaerat quod fugit alias qui sed quis. Voluptas consectetur voluptates odio quae repellat saepe aliquid facere at? Labore, necessitatibus aperiam consequuntur minus eveniet quibusdam velit voluptatem, recusandae quo nihil quasi similique molestiae sit veniam numquam cupiditate ullam placeat mollitia nostrum autem sint dolore perspiciatis possimus? Iure repellat ipsam doloremque minus aliquam fuga blanditiis natus ut, doloribus nemo.</p>
+      <p content="notranslate" class="lorem lorem2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi fugiat incidunt velit dolorum recusandae quas ducimus possimus quae voluptatibus accusamus ullam soluta voluptatum, iste corporis repellendus quis perspiciatis, sunt rerum? Voluptate aperiam harum dolorum earum quo dignissimos tempora quaerat? Sit eveniet et nemo harum reprehenderit dicta recusandae nobis asperiores vero veritatis provident aliquid quam tempore distinctio nihil, laborum quis expedita odit voluptates quod a voluptas perspiciatis explicabo voluptate? Voluptates, vitae et! Repudiandae temporibus illum, natus voluptatem velit est dignissimos atque. Qui consequuntur molestiae, officiis dicta inventore perspiciatis illum veniam voluptas magnam tempora iusto adipisci provident ea iste dolores reprehenderit a reiciendis aliquam harum porro quod vel ipsa! Quo ullam dolores commodi quasi dolor ut nihil ducimus similique eligendi, ipsum iusto quas labore minus ex expedita error nobis eius provident. Quae voluptatem neque voluptas alias non atque corporis hic, autem eius aut nulla dicta totam, inventore exercitationem beatae distinctio necessitatibus impedit? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi obcaecati, voluptas sit, earum deleniti a mollitia, amet ut porro sunt eius iste deserunt quo voluptatibus ratione nostrum molestiae. Earum reiciendis totam inventore ex quas deleniti quo quidem cupiditate quisquam, asperiores corporis ab quasi quaerat quod fugit alias qui sed quis. Voluptas consectetur voluptates odio quae repellat saepe aliquid facere at? Labore, necessitatibus aperiam consequuntur minus eveniet quibusdam velit voluptatem, recusandae quo nihil quasi similique molestiae sit veniam numquam cupiditate ullam placeat mollitia nostrum autem sint dolore perspiciatis possimus? Iure repellat ipsam doloremque minus aliquam fuga blanditiis natus ut, doloribus nemo.</p>
+      <div id="home-box" class="higher-z-index">
+        <h1>awful authors</h1>
+        <div class="centered home-container" id="nickname-container">
+          <p>Enter your pen name:</p>
+          <input class="home-button" id="nickname" type="text" label="Nickname" placeholder="Nickname" minlength="2" maxlength="14" pattern="[a-zA-Z0-9_ ]{2,14}">
+        </div>
+        <div class="centered home-container" id="create-container">
+          <p>Create a new game:</p>
+          <button class="home-button" id="create-btn">Create Game</button>
+        </div>
+        <div class="centered home-container" id="join-container">
+          <p>Join an existing game:</p>
+          <div id="join-game-btn-container">
+            <input class="home-button" id="room-code-input" type="text" label="Input Room Code" placeholder="enter room code">
+            <img id="join-btn" src="triangle.png">
+          </div>
+        </div>
+      </div>
+      <div id="home-info-box" class="higher-z-index">
+        <div id="home-info-popup" class="popup">
+          <h2 id="popup-info-heading"></h2>
+          <div class="divider" style="background-color: rgb(141, 189, 189); width: 31%;"></div>
+          <br>
+          <p id="popup-info-text"></p>
+        </div>
+        <div id="home-button-bar">
+          <button id="about-btn">about awful authors</button>
+          <button id="rules-btn">how to play</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="view-lobby" class="hidden background">
+      <p content="notranslate" class="lorem">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi fugiat incidunt velit dolorum recusandae quas ducimus possimus quae voluptatibus accusamus ullam soluta voluptatum, iste corporis repellendus quis perspiciatis, sunt rerum? Voluptate aperiam harum dolorum earum quo dignissimos tempora quaerat? Sit eveniet et nemo harum reprehenderit dicta recusandae nobis asperiores vero veritatis provident aliquid quam tempore distinctio nihil, laborum quis expedita odit voluptates quod a voluptas perspiciatis explicabo voluptate? Voluptates, vitae et! Repudiandae temporibus illum, natus voluptatem velit est dignissimos atque. Qui consequuntur molestiae, officiis dicta inventore perspiciatis illum veniam voluptas magnam tempora iusto adipisci provident ea iste dolores reprehenderit a reiciendis aliquam harum porro quod vel ipsa! Quo ullam dolores commodi quasi dolor ut nihil ducimus similique eligendi, ipsum iusto quas labore minus ex expedita error nobis eius provident. Quae voluptatem neque voluptas alias non atque corporis hic, autem eius aut nulla dicta totam, inventore exercitationem beatae distinctio necessitatibus impedit? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi obcaecati, voluptas sit, earum deleniti a mollitia, amet ut porro sunt eius iste deserunt quo voluptatibus ratione nostrum molestiae. Earum reiciendis totam inventore ex quas deleniti quo quidem cupiditate quisquam, asperiores corporis ab quasi quaerat quod fugit alias qui sed quis. Voluptas consectetur voluptates odio quae repellat saepe aliquid facere at? Labore, necessitatibus aperiam consequuntur minus eveniet quibusdam velit voluptatem, recusandae quo nihil quasi similique molestiae sit veniam numquam cupiditate ullam placeat mollitia nostrum autem sint dolore perspiciatis possimus? Iure repellat ipsam doloremque minus aliquam fuga blanditiis natus ut, doloribus nemo.</p>
+      <p content="notranslate" class="lorem lorem2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi fugiat incidunt velit dolorum recusandae quas ducimus possimus quae voluptatibus accusamus ullam soluta voluptatum, iste corporis repellendus quis perspiciatis, sunt rerum? Voluptate aperiam harum dolorum earum quo dignissimos tempora quaerat? Sit eveniet et nemo harum reprehenderit dicta recusandae nobis asperiores vero veritatis provident aliquid quam tempore distinctio nihil, laborum quis expedita odit voluptates quod a voluptas perspiciatis explicabo voluptate? Voluptates, vitae et! Repudiandae temporibus illum, natus voluptatem velit est dignissimos atque. Qui consequuntur molestiae, officiis dicta inventore perspiciatis illum veniam voluptas magnam tempora iusto adipisci provident ea iste dolores reprehenderit a reiciendis aliquam harum porro quod vel ipsa! Quo ullam dolores commodi quasi dolor ut nihil ducimus similique eligendi, ipsum iusto quas labore minus ex expedita error nobis eius provident. Quae voluptatem neque voluptas alias non atque corporis hic, autem eius aut nulla dicta totam, inventore exercitationem beatae distinctio necessitatibus impedit? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi obcaecati, voluptas sit, earum deleniti a mollitia, amet ut porro sunt eius iste deserunt quo voluptatibus ratione nostrum molestiae. Earum reiciendis totam inventore ex quas deleniti quo quidem cupiditate quisquam, asperiores corporis ab quasi quaerat quod fugit alias qui sed quis. Voluptas consectetur voluptates odio quae repellat saepe aliquid facere at? Labore, necessitatibus aperiam consequuntur minus eveniet quibusdam velit voluptatem, recusandae quo nihil quasi similique molestiae sit veniam numquam cupiditate ullam placeat mollitia nostrum autem sint dolore perspiciatis possimus? Iure repellat ipsam doloremque minus aliquam fuga blanditiis natus ut, doloribus nemo.</p>
+      <div id="lobby-box" class="higher-z-index">
+        <h1>awful authors</h1>
+        <div id="game-info">
+          <div id="game-info-left">
+            <div id="game-settings">
+              <div class="lobby-info-box">
+                <h2>game settings</h2>
+                <div id="lobby-info-contents">
+                  <div class="label-value">
+                    <div class="lobby-value-label">
+                      <p class="label-title">word count</p>
+                      <div class="divider"></div>
+                      <p class="label-description">number of words per player turn (1-10)</p>
+                    </div>
+                    <input type="number" id="wordCountInput" min="1" max="10" value="3" required>
+                  </div>
+                  <div class="label-value">
+                    <div class="lobby-value-label">
+                      <p class="label-title">round count</p>
+                      <div class="divider"></div>
+                      <p class="label-description">number of turns each player has (1-100)</p>
+                    </div>
+                    <input type="number" id="roundInput" min="1" max="100" value="5" required>
+                  </div>
+                  <div class="label-value" id="prompt-check">
+                    <p class="label-title">use random prompt?</p>
+                    <input type="checkbox" id="prompt" checked="true">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="lobby-buttons">
+              <button id="copy-code-btn" class="lobby-button">copy room code</button>
+              <button id="init-game-btn" class="lobby-button">start game</button>
+            </div>
+          </div>
+          <div id="connected-players">
+            <div class="lobby-info-box">
+              <h2>connected players</h2>
+              <ul id="player-list">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="lobby-error-box" style="opacity: 1;">
+          <p id="error">cannot begin game until there are 2 players!</p>
+          <p id="hint">(hint, if wanting to play on your own for testing purposes, try joining the lobby from an incognito tab!)</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="view-temp-start" class="hidden">
+      <div id="countdown-timer">
+        <div></div>
+      </div>
+    </div>
+
+    <div id="view-game" class="hidden background">
+      <p content="notranslate" id="lorem1" class="lorem">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi fugiat incidunt velit dolorum recusandae quas ducimus possimus quae voluptatibus accusamus ullam soluta voluptatum, iste corporis repellendus quis perspiciatis, sunt rerum? Voluptate aperiam harum dolorum earum quo dignissimos tempora quaerat? Sit eveniet et nemo harum reprehenderit dicta recusandae nobis asperiores vero veritatis provident aliquid quam tempore distinctio nihil, laborum quis expedita odit voluptates quod a voluptas perspiciatis explicabo voluptate? Voluptates, vitae et! Repudiandae temporibus illum, natus voluptatem velit est dignissimos atque. Qui consequuntur molestiae, officiis dicta inventore perspiciatis illum veniam voluptas magnam tempora iusto adipisci provident ea iste dolores reprehenderit a reiciendis aliquam harum porro quod vel ipsa! Quo ullam dolores commodi quasi dolor ut nihil ducimus similique eligendi, ipsum iusto quas labore minus ex expedita error nobis eius provident. Quae voluptatem neque voluptas alias non atque corporis hic, autem eius aut nulla dicta totam, inventore exercitationem beatae distinctio necessitatibus impedit? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi obcaecati, voluptas sit, earum deleniti a mollitia, amet ut porro sunt eius iste deserunt quo voluptatibus ratione nostrum molestiae. Earum reiciendis totam inventore ex quas deleniti quo quidem cupiditate quisquam, asperiores corporis ab quasi quaerat quod fugit alias qui sed quis. Voluptas consectetur voluptates odio quae repellat saepe aliquid facere at? Labore, necessitatibus aperiam consequuntur minus eveniet quibusdam velit voluptatem, recusandae quo nihil quasi similique molestiae sit veniam numquam cupiditate ullam placeat mollitia nostrum autem sint dolore perspiciatis possimus? Iure repellat ipsam doloremque minus aliquam fuga blanditiis natus ut, doloribus nemo.</p>
+      <p content="notranslate" id="lorem2" class="lorem lorem2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi fugiat incidunt velit dolorum recusandae quas ducimus possimus quae voluptatibus accusamus ullam soluta voluptatum, iste corporis repellendus quis perspiciatis, sunt rerum? Voluptate aperiam harum dolorum earum quo dignissimos tempora quaerat? Sit eveniet et nemo harum reprehenderit dicta recusandae nobis asperiores vero veritatis provident aliquid quam tempore distinctio nihil, laborum quis expedita odit voluptates quod a voluptas perspiciatis explicabo voluptate? Voluptates, vitae et! Repudiandae temporibus illum, natus voluptatem velit est dignissimos atque. Qui consequuntur molestiae, officiis dicta inventore perspiciatis illum veniam voluptas magnam tempora iusto adipisci provident ea iste dolores reprehenderit a reiciendis aliquam harum porro quod vel ipsa! Quo ullam dolores commodi quasi dolor ut nihil ducimus similique eligendi, ipsum iusto quas labore minus ex expedita error nobis eius provident. Quae voluptatem neque voluptas alias non atque corporis hic, autem eius aut nulla dicta totam, inventore exercitationem beatae distinctio necessitatibus impedit? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi obcaecati, voluptas sit, earum deleniti a mollitia, amet ut porro sunt eius iste deserunt quo voluptatibus ratione nostrum molestiae. Earum reiciendis totam inventore ex quas deleniti quo quidem cupiditate quisquam, asperiores corporis ab quasi quaerat quod fugit alias qui sed quis. Voluptas consectetur voluptates odio quae repellat saepe aliquid facere at? Labore, necessitatibus aperiam consequuntur minus eveniet quibusdam velit voluptatem, recusandae quo nihil quasi similique molestiae sit veniam numquam cupiditate ullam placeat mollitia nostrum autem sint dolore perspiciatis possimus? Iure repellat ipsam doloremque minus aliquam fuga blanditiis natus ut, doloribus nemo.</p>
+      <div id="game-box" class="higher-z-index">
+        <div id="prompt-box" class="hidden">
+            <p id="prompt-heading">your prompt is:</p>
+            <p id="prompt-text"></p>
+        </div>
+        <div id="game-box-contents">
+          <div id="timer-box">
+            <div id="timer-border">
+              <canvas id="timer-canvas" width="200px" height="200px"></canvas>
+            </div>
+          </div>
+
+          <div id="rounds-box" class="lobby-info-box">
+            <h2>round</h2>
+            <div id="round-number-box">
+              <p id="roundsPlayed"></p>
+            </div>
+          </div>
+
+          <div id="words-box">
+            <span id="words-left"></span><span id="words-left-heading">words left</span>
+          </div>
+
+          <div id="turns-box" class="lobby-info-box">
+            <h2>turn queue</h2>
+            <ul id="turn-queue"></ul>
+          </div>
+
+          <div id="story-box">
+            <span id="story-text"></span><span id="cursor"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="view-end-game" class="hidden background">
+      <p content="notranslate" id="lorem1" class="lorem">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi fugiat incidunt velit dolorum recusandae quas ducimus possimus quae voluptatibus accusamus ullam soluta voluptatum, iste corporis repellendus quis perspiciatis, sunt rerum? Voluptate aperiam harum dolorum earum quo dignissimos tempora quaerat? Sit eveniet et nemo harum reprehenderit dicta recusandae nobis asperiores vero veritatis provident aliquid quam tempore distinctio nihil, laborum quis expedita odit voluptates quod a voluptas perspiciatis explicabo voluptate? Voluptates, vitae et! Repudiandae temporibus illum, natus voluptatem velit est dignissimos atque. Qui consequuntur molestiae, officiis dicta inventore perspiciatis illum veniam voluptas magnam tempora iusto adipisci provident ea iste dolores reprehenderit a reiciendis aliquam harum porro quod vel ipsa! Quo ullam dolores commodi quasi dolor ut nihil ducimus similique eligendi, ipsum iusto quas labore minus ex expedita error nobis eius provident. Quae voluptatem neque voluptas alias non atque corporis hic, autem eius aut nulla dicta totam, inventore exercitationem beatae distinctio necessitatibus impedit? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi obcaecati, voluptas sit, earum deleniti a mollitia, amet ut porro sunt eius iste deserunt quo voluptatibus ratione nostrum molestiae. Earum reiciendis totam inventore ex quas deleniti quo quidem cupiditate quisquam, asperiores corporis ab quasi quaerat quod fugit alias qui sed quis. Voluptas consectetur voluptates odio quae repellat saepe aliquid facere at? Labore, necessitatibus aperiam consequuntur minus eveniet quibusdam velit voluptatem, recusandae quo nihil quasi similique molestiae sit veniam numquam cupiditate ullam placeat mollitia nostrum autem sint dolore perspiciatis possimus? Iure repellat ipsam doloremque minus aliquam fuga blanditiis natus ut, doloribus nemo.</p>
+      <p content="notranslate" id="lorem2" class="lorem lorem2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi fugiat incidunt velit dolorum recusandae quas ducimus possimus quae voluptatibus accusamus ullam soluta voluptatum, iste corporis repellendus quis perspiciatis, sunt rerum? Voluptate aperiam harum dolorum earum quo dignissimos tempora quaerat? Sit eveniet et nemo harum reprehenderit dicta recusandae nobis asperiores vero veritatis provident aliquid quam tempore distinctio nihil, laborum quis expedita odit voluptates quod a voluptas perspiciatis explicabo voluptate? Voluptates, vitae et! Repudiandae temporibus illum, natus voluptatem velit est dignissimos atque. Qui consequuntur molestiae, officiis dicta inventore perspiciatis illum veniam voluptas magnam tempora iusto adipisci provident ea iste dolores reprehenderit a reiciendis aliquam harum porro quod vel ipsa! Quo ullam dolores commodi quasi dolor ut nihil ducimus similique eligendi, ipsum iusto quas labore minus ex expedita error nobis eius provident. Quae voluptatem neque voluptas alias non atque corporis hic, autem eius aut nulla dicta totam, inventore exercitationem beatae distinctio necessitatibus impedit? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi obcaecati, voluptas sit, earum deleniti a mollitia, amet ut porro sunt eius iste deserunt quo voluptatibus ratione nostrum molestiae. Earum reiciendis totam inventore ex quas deleniti quo quidem cupiditate quisquam, asperiores corporis ab quasi quaerat quod fugit alias qui sed quis. Voluptas consectetur voluptates odio quae repellat saepe aliquid facere at? Labore, necessitatibus aperiam consequuntur minus eveniet quibusdam velit voluptatem, recusandae quo nihil quasi similique molestiae sit veniam numquam cupiditate ullam placeat mollitia nostrum autem sint dolore perspiciatis possimus? Iure repellat ipsam doloremque minus aliquam fuga blanditiis natus ut, doloribus nemo.</p>
+      <div id="endgame-box-container">
+        <div id="end-game-box" class="higher-z-index">
+          <div id="endgame-left-side" class="endgame-halves">
+            <div id="endgame-title">
+              <h1>awful authors</h1>
+              <div class="divider"></div>
+              <p>congratulations on penning such a marvellous story!</p>
+            </div>
+            <div id="endgame-name-list-container">
+              <p>hover over the names below to see each writer's contributions:</p>
+              <ul id="endgame-name-list">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+            <button id="play-again-btn">play again?</button>
+          </div>
+          <div id="endgame-right-side" class="endgame-halves">
+            <p id="theme-label"></p>
+            <p id="final-story"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      // queue carousel for ingame turn order
+
+      // handles view changes so game remains entirely on one page
+      function showView(viewIdToShow) {
+        const views = ['view-home', 'view-lobby', 'view-temp-start', 'view-game', 'view-end-game'];
+        views.forEach(viewId => {
+          const view = document.getElementById(viewId);
+          if (view) {
+            // loop through all views and hide them all
+            view.classList.add('hidden');
+          }
+        });
+        
+        // remove hidden attribute from view we want to show
+        const viewToShow = document.getElementById(viewIdToShow);
+        if (viewToShow) {
+          viewToShow.classList.remove('hidden');
+        }
+      }
+
+      // home view shown when page loads
+      document.addEventListener('DOMContentLoaded', () => {
+        showView('view-home');
+      });
+
+      //get last known userId and roomCode or null
+      let currentUserId = localStorage.getItem("userId");
+      let currentRoomCode = localStorage.getItem("roomCode");
+      let currentNickname = localStorage.getItem("nickname");
+
+      //send last knowns to server
+      const socket = io({
+          auth: {
+              userId: currentUserId,
+              roomCode: currentRoomCode
+          }
+      });
+
+      //Checks to see if server has blipped, or client
+      let knownServerId = null;
+      socket.on("server_id", (id) => {
+        if (knownServerId && knownServerId !== id) {
+          console.log("⚠️ Server restarted!");
+          location.reload();
+        }
+        knownServerId = id;
+      });
+
+      const createGame = document.getElementById("create-btn");
+      const joinBtn = document.getElementById("join-btn");
+      const nicknameInput = document.getElementById("nickname")
+      nicknameInput.value = currentNickname;
+            
+      const roomCodeInput = document.getElementById('room-code-input');
+      if (currentRoomCode) {
+        roomCodeInput.value = currentRoomCode;
+      }
+
+      createGame.addEventListener('click', (e) => {
+        const enteredNickname = nicknameInput.value;
+        if (!enteredNickname) {
+          alert("Please enter your nickname first.");
+          return;
+        }
+        currentNickname = nicknameInput.value;
+        socket.emit('createGame', nicknameInput.value);
+        nicknameInput.value = '';
+      });
+
+      joinBtn.addEventListener('click', (e) => {
+        const enteredNickname = nicknameInput.value;
+        if (!enteredNickname) {
+          alert("Please enter your nickname first.");
+          return;
+        }
+        currentNickname = enteredNickname;
+
+        const enteredRoomCode = roomCodeInput.value.trim(); // Get value from the input field
+        if (!enteredRoomCode) {
+          alert("Please enter a room code.");
+          return;
+        }
+
+        socket.emit("joinGame", enteredNickname, enteredRoomCode);
+      });
+
+      const aboutBtn = document.getElementById('about-btn');
+      const rulesBtn = document.getElementById('rules-btn');
+      const popupMenu = document.getElementById('home-info-popup');
+      const popupText = document.getElementById('popup-info-text');   
+      const popupHeading = document.getElementById('popup-info-heading');   
+
+      let aboutActive = false;
+      let rulesActive = false;
+
+      aboutBtn.addEventListener('click', (e) => {
+        if (!aboutActive) {
+          if (!rulesActive) {
+            // open popup menu
+            popupMenu.classList.add('show-info');
+          } else {
+            // change popup menu to about
+            rulesBtn.classList.remove('active');
+            rulesActive = false;
+          };
+          // change popup menu text and design
+          popupHeading.textContent = "about awful authors";
+          popupText.textContent = "awful authors is a project lovingly created by Estella Perkons and Edward Cox." + 
+            "\n\n One fateful night, Ed and Estella found that they were both unable to sleep, and so Ed suggested they play a silly improv game to pass the time. After playing it a few times, Estella asked Ed if he wanted to make an actual game out of this, and from then on, awful authors was born. " + 
+            "\n\n note from Estella: thank you for checking out our game! we pair programmed IRL the entire time, so we spent many nights together scratching our heads over how to implement something, or why there was a specific bug (looking at you, undefined charCount), and it was an amazing learning experience that i'd love to do again. " + 
+            "\n\n note from Edward: hello! once again thank you for visiting our game. we spent lots of nights coding whilst watching movies, going delerious over bugs that shouldn't exist but do, and asking each other for help. we had lots of fun making it, and we hope you have some fun playing it. ";
+          aboutActive = true;
+          aboutBtn.classList.add('active');
+        } else {
+          closePopup();
+        };
+      });
+
+      rulesBtn.addEventListener('click', (e) => {
+        if (!rulesActive) {
+          if (!aboutActive) {
+            // open popup menu
+            popupMenu.classList.add('show-info');
+          } else {
+            // change popup menu to rules
+            aboutBtn.classList.remove('active');
+            aboutActive = false;
+          };
+          // change popup menu text and design
+          popupHeading.textContent = "how to play";
+          popupText.textContent = "each game is made up of rounds, and each player has one turn per round. in a turn, a player can write as many words as allocated by the word count, within the time limit depicted by the countdown timer. \n\n the game order is decided by the order that players join the lobby. once in the game, if the background darkens and your name is highlighted, it is your turn to write your words. there is no need to click on anything; simply type on your keyboard and watch as the characters appear onscreen. \n\n to complete your turn before the timer runs out, write as many words as you can, and then end your turn by pressing space or enter. if the timer runs out on your turn and you leave a word unfinished, it is up to the next player to complete the word. \n\n don't worry if you disconnect mid-game; just press the arrow to join the game again, and you will be reconnected.";
+          rulesActive = true;
+          rulesBtn.classList.add('active');
+        } else {
+          closePopup();
+        };
+      });
+
+      document.addEventListener('click', closePopupOuterClick);
+
+      function closePopup() {
+        aboutActive = false;
+        rulesActive = false;
+        popupMenu.classList.remove('show-info');
+        aboutBtn.classList.remove('active');
+        rulesBtn.classList.remove('active');
+      };
+
+      function closePopupOuterClick(e) {
+        if (
+          popupMenu.classList.contains('show-info') && 
+          !popupMenu.contains(e.target) && 
+          !aboutBtn.contains(e.target) && 
+          !rulesBtn.contains(e.target)
+        ) {
+          closePopup();
+        };
+      };
+
+      socket.on("createGame", (roomCode) => {
+        socket.emit('joinGame', currentNickname, roomCode);
+      });
+
+      let host = false;
+      socket.on("joinGame", (userId, validRoomCode, nicknames, numPrompts) => {
+        host = false;
+        document.removeEventListener('click', closePopupOuterClick);
+        showView('view-lobby');
+        
+        currentRoomCode = validRoomCode;
+        currentUserId = userId;
+        localStorage.setItem('userId', userId);
+        localStorage.setItem('roomCode', currentRoomCode);
+        localStorage.setItem('nickname', currentNickname);
+        // Update socket.auth to use the confirmed ID for future reconnections
+        socket.auth.userId = userId;
+        socket.auth.roomCode = validRoomCode;
+
+        socket.emit('updateAuth', {userId, roomCode: validRoomCode})
+
+        // copy code for current room
+        const copyCodeBtn = document.getElementById('copy-code-btn');
+        copyCodeBtn.addEventListener('click', (e) => {
+          navigator.clipboard.writeText(validRoomCode).then(() => {
+            copyCodeBtn.textContent = "copied!";
+            setTimeout(() => {
+              copyCodeBtn.textContent = "copy room code";
+            }, 1000);
+          });
+        });
+
+        // so users can't type in numbers smaller than min and bigger than max
+        const wordCountInput = document.getElementById('wordCountInput');
+        const roundInput = document.getElementById('roundInput');
+        wordCountInput.addEventListener('input', (e) => {
+          handleLobbyInput(e.target);
+        });
+        roundInput.addEventListener('input', (e) => {
+          handleLobbyInput(e.target);
+        });
+
+        function handleLobbyInput(type) {
+          let min = parseInt(type.min);
+          let max = parseInt(type.max);
+          let value = parseInt(type.value);
+
+          if (Number.isInteger(value)) {
+            if (value < min) {
+              type.value = min;
+            } else if (value > max) {
+              type.value = max;
+            };
+          };
+
+          socket.emit('lobbyValChange', validRoomCode, type.id, type.value);
+        };
+
+        const playerList = document.getElementById('player-list');
+        const slots = playerList.querySelectorAll('li');
+        nicknames.forEach((n, i) => {
+          slots[i].textContent = n;
+        });
+
+        const initGameBtn = document.getElementById('init-game-btn');
+        const lobbyErrorBox = document.getElementById('lobby-error-box');
+        
+        initGameBtn.disabled = true;
+        if (slots[1].textContent !== ""){
+          initGameBtn.disabled = false;
+          lobbyErrorBox.style.opacity = '0';
+        }
+        initGameBtn.addEventListener('click', (e) => {
+          let promptVal = -1;
+          host = true;
+          if (document.getElementById("prompt").checked) {
+            promptVal = Math.floor(Math.random() * numPrompts);
+          };
+          socket.emit('initGame', validRoomCode, wordCountInput.value, roundInput.value, promptVal);
+        });
+
+        // when player joins lobby, updates list of players in lobby for everyone
+        socket.on('lobbyJoin', (nickname) => {
+          for (let slot of slots) {
+            if (!slot.textContent) {
+              slot.textContent = nickname;
+              break;
+            }
+          }
+          if (slots[1].textContent !== ""){
+            initGameBtn.disabled = false;
+            lobbyErrorBox.style.opacity = '0';
+          }
+
+          socket.emit('lobbyValChange', validRoomCode, wordCountInput.id, wordCountInput.value);
+          socket.emit('lobbyValChange', validRoomCode, roundInput.id, roundInput.value);
+        });
+
+        socket.on('lobbyLeave', (newNicknames) => {
+          let count = 0;
+          for (let slot of slots) {
+            if (slot.textContent) {
+              if (count < newNicknames.length) {
+                slots[count].textContent = newNicknames[count];
+                count++;
+              } else {
+                slot.textContent = "";
+              }
+            }
+          }
+          
+          if (slots[1].textContent === ""){
+            initGameBtn.disabled = true;
+            lobbyErrorBox.style.opacity = '1';
+          }
+        })
+
+        socket.on('lobbyValChange', (element, value) => {
+          document.getElementById(element).value = value;
+        })
+      });
+
+      let roundLimit;
+      const roundsPlayed = document.getElementById('roundsPlayed');
+      socket.on("initGame", (wordCount, roundCount, prompt, nicknames, playerIds, reconnect) => {
+        showView('view-temp-start');
+        document.getElementById("view-lobby").classList.remove('hidden');
+        //keep this one shown, but put semi transparent grey 
+        //square over it to block buttons and grey it out.
+
+        roundLimit = roundCount;
+
+        const chars = ' abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!"£$%^&*()-_=+[]{}~#:;@?/,.'
+
+        const storyBox = document.getElementById('story-box');
+        const storyText = document.getElementById('story-text');
+        storyText.textContent = "";
+
+        if (prompt != ""){
+          const promptBox= document.getElementById('prompt-box');
+          promptBox.classList.remove('hidden');
+          promptBox.style.display = "flex";
+          const promptText = document.getElementById('prompt-text');
+          promptText.textContent = prompt;
+        }
+
+        const cursor = document.getElementById('cursor');
+        const pageBackground = document.getElementById("view-game");
+        const lorem1 = document.getElementById('lorem1');
+        const lorem2 = document.getElementById('lorem2');
+        const turnQueue = document.getElementById('turn-queue');
+        const wordsLeft = document.getElementById('words-left');
+
+        wordsLeft.textContent = wordCount;
+
+        if (!reconnect && host === true){
+          setTimeout(() => {
+            socket.emit('startGame', currentRoomCode);
+          }, 3000);
+        }
+
+        nicknames.forEach((n, index) => {
+          const name = document.createElement('li');
+          name.id = playerIds[index];
+          name.textContent = n;
+          turnQueue.appendChild(name);
+        });
+
+        //Received BEFORE the first turn.
+        let playerTurn;
+        let charListener = false;
+        socket.on('startGame', (playerId) => {
+          showView('view-game');
+
+          playerTurn = playerId;
+          roundsPlayed.textContent = `1 of ${roundLimit}`;
+          if (playerTurn === currentUserId) {
+            cursor.style.display = 'inline-block';
+            pageBackground.style.backgroundColor = "#20282b";
+            lorem1.style.color = "#253034";
+            lorem2.style.color = "#253034";
+          } else {
+            cursor.style.display = 'none';
+            pageBackground.style.backgroundColor = "#caede8";
+            lorem1.style.color = "#dcf4f0";
+            lorem2.style.color = "#dcf4f0";
+          }
+
+          if (charListener){
+            document.removeEventListener('keydown', handleKeydown);
+          } else {
+            charListener = true;
+            document.addEventListener('keydown', handleKeydown);
+          }
+
+          function handleKeydown(e){
+            if (playerTurn === currentUserId) {
+              if (chars.includes(e.key)) {
+                socket.emit('newChar', e.key, currentRoomCode);
+              } else if (e.key === "Enter") {
+                socket.emit('newChar', '|', currentRoomCode);
+              } else if (e.key === "Backspace") {
+                socket.emit('newChar', '¬', currentRoomCode);
+              };
+            }
+          }
+
+          socket.on('playAgain', () => {
+            document.getElementById('final-story').innerHTML = "";
+            document.getElementById("player-list").innerHTML = "";
+            document.getElementById("endgame-name-list").innerHTML = "";
+            for (let i = 0; i < 8; i++) {
+              const li1 = document.createElement("li");
+              const li2 = document.createElement("li");
+              document.getElementById("player-list").appendChild(li1);
+              document.getElementById("endgame-name-list").appendChild(li2);
+            }
+            document.getElementById("turn-queue").innerHTML = "";
+            document.removeEventListener('keydown', handleKeydown);
+
+            let buttons = ['copy-code-btn', 'init-game-btn', 'play-again-btn']
+            buttons.forEach(btnName => {
+              const btn = document.getElementById(btnName);
+              btn.replaceWith(btn.cloneNode(true));
+            });
+
+            resetListeners();
+          });
+        });
+
+        socket.on('newChar', (char) => {
+          if (char === "¬") {
+            if (storyText.textContent.slice(-1) === " ") {
+              wordsLeft.textContent = Number(wordsLeft.textContent) + 1;
+            }
+            storyText.textContent = storyText.textContent.slice(0, -1);
+          }
+          else{
+            storyText.textContent += char;
+          }
+
+          if (char === " ") {
+            wordsLeft.textContent -= 1;
+          }
+
+          storyBox.scrollTop = storyBox.scrollHeight;
+        });
+
+        //Received AFTER a turn has completed (start of a new turn)
+        let gameOver = false;
+        socket.on('turnStart', (playerId, newWordLimit) => {
+          wordCount = newWordLimit;
+          wordsLeft.textContent = wordCount;
+
+          let playerBoxes = Array.from(turnQueue.children);
+          playerBoxes.forEach(box => {
+            if (box.id == playerId){
+              box.style.backgroundColor = 'white';
+              box.style.color = 'black';
+            } else {
+              box.style.backgroundColor = null;
+              box.style.color = 'white';
+            }
+          })
+
+          playerTurn = playerId;
+          if (playerTurn === currentUserId) {
+            cursor.style.display = 'inline-block';
+            pageBackground.style.backgroundColor = "#20282b";
+            lorem1.style.color = "#253034";
+            lorem2.style.color = "#253034";
+          } else {
+            cursor.style.display = 'none';
+            pageBackground.style.backgroundColor = "#caede8";
+            lorem1.style.color = "#dcf4f0";
+            lorem2.style.color = "#dcf4f0";
+          }
+
+          // Start the circular countdown
+          const canvas = document.getElementById("timer-canvas");
+          const ctx = canvas.getContext("2d");
+          const radius = canvas.width / 2;
+          const duration = wordCount * 3000; // duration in ms
+          let animationFrame;
+          const timerEnd = Date.now() + duration;
+
+          function drawTimer() {
+            const now = Date.now();
+            const timeLeft = Math.max(timerEnd - now, 0); // how much time remains
+            const progress = timeLeft / duration; // goes from 1 -> 0
+
+            // Clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw full gray background circle
+            ctx.beginPath();
+            ctx.arc(radius, radius, radius - 5, 0, 2 * Math.PI);
+            ctx.fillStyle = "#0F7B8E"; // background color
+            ctx.fill();
+
+            // Draw shrinking colored arc
+            const startAngle = -Math.PI / 2; // top
+            const endAngle = startAngle - 2 * Math.PI * progress;
+
+            ctx.beginPath();
+            ctx.moveTo(radius, radius);
+            ctx.arc(radius, radius, radius - 5, startAngle, endAngle, true); // counterclockwise
+
+            ctx.closePath();
+            ctx.fillStyle = "#1cabb0"; // timer color
+            ctx.fill();
+
+            if (timeLeft > 0) {
+              animationFrame = requestAnimationFrame(drawTimer);
+            }
+
+            if (gameOver) cancelAnimationFrame(animationFrame);
+          }
+
+          cancelAnimationFrame(animationFrame); // stop any previous animation
+          drawTimer();
+        });
+
+        //Received at the end of a ROUND
+        socket.on('roundEnd', (roundNumber) => {
+          roundsPlayed.textContent = `${roundNumber} of ${roundLimit}`;
+        });
+
+        socket.on('endGame', (finalStory, prompt, nicknames, contributions) => {
+          showView('view-end-game');
+
+          gameOver = true;
+          const promptLabel = document.getElementById('theme-label');
+          promptLabel.textContent = `your prompt was:\n${prompt}`;
+          const finalStoryBox = document.getElementById('final-story');
+          const storyWords = finalStory.trim().split(/(\|)|\s+/).filter(Boolean);
+          
+          // Wrap each word in a span
+          storyWords.forEach((word, index) => {
+            const span = document.createElement('span');
+            span.textContent = word + " "; // keep the space
+            finalStoryBox.appendChild(span);
+          });
+          const wordSpans = finalStoryBox.querySelectorAll('span');
+          
+          const endgamePlayerList = document.getElementById('endgame-name-list');
+          const slots = endgamePlayerList.querySelectorAll('li');
+          /*
+          for each nickname, set an empty li to be that name, and give it
+          an event listener for hovering. When hovered upon, for each word (span)
+          in the final story, check if the corresponding contribution id is the same
+          as the nickname you're hovering upon.
+          */
+          nicknames.forEach((n, i) => {
+            slots[i].textContent = n;
+            slots[i].addEventListener('mouseenter', () => {
+              wordSpans.forEach((span, index) => {
+                if (parseInt(contributions[index]) === i) {
+                  span.classList.add("contribution"); // highlight color
+                } else {
+                  span.classList.remove("contribution") // reset color
+                }
+              });
+            });
+            slots[i].addEventListener('mouseleave', () => {
+              wordSpans.forEach(span => {
+                span.classList.remove("contribution") // reset color
+              });
+            });
+          });
+
+          const playAgainBtn = document.getElementById('play-again-btn');
+          playAgainBtn.addEventListener('click', (e) => {
+            socket.emit('playAgain', currentRoomCode, currentUserId, currentNickname);
+          });
+        });
+
+        socket.on('gameRecovery', (currentRound, storyStr) => {
+          //recover the game details
+          roundsPlayed.textContent = `${currentRound} / ${roundLimit}`;
+          
+          //recover the story
+          let result = '';
+          for (const char of storyStr){
+            if (chars.includes(char)){
+              result += char;
+            } else if (char === "¬") {
+              result = result.slice(0, -1);
+            };
+          };
+          storyText.textContent = result;
+          storyBox.scrollTop = storyBox.scrollHeight;
+        });
+      });
+
+      socket.on("error", (error) => {
+        alert(error);
+      });
+
+      function resetListeners() {
+        // evil sockets of death and doom
+        let evilSockets = ['startGame', 'playAgain', 'newChar', 'turnStart', 'roundEnd', 'endGame', 'lobbyJoin']
+        evilSockets.forEach(socketName => {
+          socket.off(socketName)
+        });
+      };
+
+    </script>
+    </body>
+</html>
